@@ -1,8 +1,7 @@
-```markdown
 # shp2pg
 
 <div align="center">
-	<img src="./public/favicon.svg" width="160" />
+	<img src="src/main/resources/02.png" width="160" />
 	<h1>SoybeanAdmin ElementPlus</h1>
   <span><a href="./README.md">中文</a> | English</span>
 </div>
@@ -21,7 +20,10 @@ How to build:
 - The resulting fat jar will be in target/shp2pg-0.1.0.jar
 
 Usage:
+
+```bash
 java -jar shp2pg-0.1.0.jar <zip-path> <table-name> <jdbc-url> <db-user> <db-password> [srid]
+```
 
 Parameters:
 
@@ -40,5 +42,8 @@ Notes:
   for integration into Java workflows.
 
 Example:
+
+```bash
 java -jar target/shp2pg-0.1.0.jar data/cities.zip cities jdbc:postgresql://localhost:5432/mydb myuser mypass 4326
 ```
+

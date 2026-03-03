@@ -1,8 +1,7 @@
-```markdown
 # shp2pg
 
 <div align="center">
-	<img src="./public/favicon.svg" width="160" />
+	<img src="src/main/resources/02.png" width="160" />
 	<h1>SoybeanAdmin ElementPlus</h1>
   <span>中文 | <a href="./README.en_US.md">English</a></span>
 </div>
@@ -21,7 +20,10 @@ Java 工具，用于解压缩 Shapefile，将要素转换为 SQL 并插入 Postg
 - 生成的 jar 文件将位于 target/shp2pg-0.1.0.jar 中
 
 用法:
+
+```bash
 java -jar shp2pg-0.1.0.jar <zip-path> <table-name> <jdbc-url> <db-user> <db-password> [srid]
+```
 
 参数:
 
@@ -38,5 +40,8 @@ java -jar shp2pg-0.1.0.jar <zip-path> <table-name> <jdbc-url> <db-user> <db-pass
 - 对于大型数据集，可以考虑调整批处理大小或使用 shp2pgsql（PostGIS 工具），后者速度更快。此实用程序用于集成到 Java 工作流中
 
 示例:
+
+```bash
 java -jar target/shp2pg-0.1.0.jar data/cities.zip cities jdbc:postgresql://localhost:5432/mydb myuser mypass 4326
 ```
+
