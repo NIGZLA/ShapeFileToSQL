@@ -1,32 +1,34 @@
 ```markdown
 # shp2pg
 
-Java utility to unzip a zipped Shapefile, convert features to SQL and insert into a Postgres/PostGIS table.
+[English](#english) | [中文说明](#中文说明)
 
-Requirements:
+Java 工具，用于解压缩 Shapefile，将要素转换为 SQL 并插入 Postgres/PostGIS 表
+
+要求:
 - Java 11+
 - Maven
-- PostgreSQL with PostGIS enabled (CREATE EXTENSION postgis;)
+- 启用 PostGIS 的 PostgreSQL（CREATE EXTENSION postgis;）
 
-How to build:
+如何建造:
 - mvn package
-- The resulting fat jar will be in target/shp2pg-0.1.0.jar
+- 生成的 jar 文件将位于 target/shp2pg-0.1.0.jar 中
 
-Usage:
+用法:
 java -jar shp2pg-0.1.0.jar <zip-path> <table-name> <jdbc-url> <db-user> <db-password> [srid]
 
-Parameters:
-- zip-path: path to the zipped shapefile (.zip) containing at least .shp, .shx, .dbf (and optional .prj)
-- table-name: destination table name in Postgres (will be created if not exists)
+参数:
+- zip-path：包含至少 .shp、.shx、.dbf（以及可选的 .prj）文件的压缩 shapefile (.zip) 的路径
+- 表名：Postgres 中的目标表名（如果不存在则会创建）
 - jdbc-url: jdbc:postgresql://host:port/database
-- db-user, db-password: credentials
-- srid (optional): force SRID (integer). If omitted, tries to read from .prj; if fails, defaults to 4326.
+- 数据库用户名、数据库密码：凭据
+- srid（可选）：强制指定 SRID（整数）。如果省略，则尝试从 .prj 文件中读取；如果读取失败，则默认为 4326。
 
-Notes:
-- The program will map shapefile attribute types to common Postgres types (text, integer, double precision, boolean, timestamp).
-- Geometry is inserted using ST_GeomFromText(WKT, SRID).
-- For large datasets, consider tuning batch size or using shp2pgsql (PostGIS tool) which can be faster. This utility is for integration into Java workflows.
+笔记:
+- 该程序会将 shapefile 属性类型映射到常见的 Postgres 类型（文本、整数、双精度、布尔值、时间戳）
+- 使用 ST_GeomFromText(WKT, SRID) 插入几何
+- 对于大型数据集，可以考虑调整批处理大小或使用 shp2pgsql（PostGIS 工具），后者速度更快。此实用程序用于集成到 Java 工作流中
 
-Example:
+示例:
 java -jar target/shp2pg-0.1.0.jar data/cities.zip cities jdbc:postgresql://localhost:5432/mydb myuser mypass 4326
 ```
