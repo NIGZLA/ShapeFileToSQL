@@ -19,7 +19,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.nigzla.ShapefileToPostgres</mainClass>
+                  <mainClass>com.nigzla.Shp2PG</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -65,7 +65,7 @@
   <properties>
     <jts.version>1.19.0</jts.version>
     <maven.compiler.target>11</maven.compiler.target>
-    <mainClass>com.nigzla.ShapefileToPostgres</mainClass>
+    <mainClass>com.nigzla.Shp2PG</mainClass>
     <maven.compiler.source>11</maven.compiler.source>
     <geotools.version>21.2</geotools.version>
   </properties>

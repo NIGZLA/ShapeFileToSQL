@@ -32,7 +32,7 @@ import java.util.zip.ZipInputStream;
  * @Usage: java -jar shp2pg.jar [zip-path] [table-name] [host] [port] [database] [db-user] [db-pass] [srid] [charset]
  * @author NIGZLA
  */
-public class ShapefileToPostgres {
+public class Shp2PG {
 
     // JDBC插入的批处理大小
     private static final int BATCH_SIZE = 500;
