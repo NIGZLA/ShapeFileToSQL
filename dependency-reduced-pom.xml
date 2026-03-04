@@ -4,7 +4,7 @@
   <groupId>com.example</groupId>
   <artifactId>shp2pg</artifactId>
   <name>Shapefile to Postgres (PostGIS) importer</name>
-  <version>0.1.0</version>
+  <version>1.0</version>
   <build>
     <plugins>
       <plugin>
@@ -19,7 +19,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.nigzla.Shp2PG</mainClass>
+                  <mainClass>com.nigzla.app.Shp2PG</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -50,6 +50,12 @@
   </repositories>
   <dependencies>
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.42</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.geotools</groupId>
       <artifactId>gt-epsg-hsql</artifactId>
       <version>21.2</version>
@@ -64,9 +70,9 @@
   </dependencies>
   <properties>
     <jts.version>1.19.0</jts.version>
-    <maven.compiler.target>11</maven.compiler.target>
-    <mainClass>com.nigzla.Shp2PG</mainClass>
-    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <mainClass>com.nigzla.app.Shp2PG</mainClass>
+    <maven.compiler.source>17</maven.compiler.source>
     <geotools.version>21.2</geotools.version>
   </properties>
 </project>
